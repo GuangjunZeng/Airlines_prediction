@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="static/css/style.css" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+      "
+    >
+      <h1>Welcome to Flight Information System!</h1>
+      <div style="text-align: center">
+        <a
+          href="{{ url_for('admin_login') }}"
+          class="button"
+          style="width: 150px"
+          >Admin Login</a
+        >
+        <a
+          href="{{ url_for('user_login') }}"
+          class="button"
+          style="width: 150px"
+          >User Login</a
+        ><br />
+      </div>
+      <a
+        href="https://github.com/TobyYang7/Flight-Information-System"
+        class="custom-link"
+      >
+        &copy; 2024 Flight Information System. All rights reserved.
+      </a>
+      <br />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+spring:
+  #配置数据源
+  datasource:
+    #配置数据源类型
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/Database1?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root #用户
+    password: "070831" #密码
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false #关闭自动转驼峰

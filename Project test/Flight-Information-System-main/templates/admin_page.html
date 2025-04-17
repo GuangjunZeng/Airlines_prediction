@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Interface</title>
+    <link rel="stylesheet" href="static/css/chat.css" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <div id="chat-history" class="chat-history">
+        {% for entry in history %}
+        <div class="{{ entry.role}}">{{ entry.content}}</div>
+        {% endfor %}
+        <br />
+      </div>
+      <form method="post" action="/admin_page" class="input-form">
+        <input
+          type="text"
+          id="query"
+          name="query"
+          placeholder="Enter your SQL code..."
+        />
+        <input
+          type="text"
+          id="ai_query"
+          name="ai_query"
+          placeholder="Ask me anything..."
+        />
+        <button type="submit">Send</button>
+        <form method="post" action="/clear_history">
+          <button type="submit">Clear History</button>
+        </form>
+        <a href="{{ url_for('home') }}">Logout</a>
+      </form>
+    </div>
+
+    <script>
+      window.onload = function () {
+        var chatHistory = document.getElementById("chat-history");
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+      };
+    </script>
+  </body>
+</html>
